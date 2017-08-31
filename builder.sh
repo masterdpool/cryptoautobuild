@@ -51,6 +51,11 @@ output "$coin_name finished and can be found in $coin/src/Coind. Make sure you c
 output "Like my scripts? Please Donate to BTC Donation: 1AxK9a7dgeHvf3VFuwZ2adGiQTX6S1nhrp"
 else
 cd src
+if [[ ! -e 'obj' ]]; then
+ sudo mkdir obj
+elif [[ ! -d 'obj' ]]; then
+    output "Hey the developer did his job" 1>&2
+fi
 cd leveldb
 sudo chmod +x build_detect_platform
 sudo make clean
