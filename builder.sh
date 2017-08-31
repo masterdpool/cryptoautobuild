@@ -32,10 +32,10 @@ output "This script assumes you already have the dependicies installed on your s
 output ""
     read -e -p "Enter the name of the coin : " coin
     read -e -p "Paste the github link for the coin : " git_hub
-if [[ ! -e '$coin_name' ]]; then
+if [[ ! -e '$coin' ]]; then
 sudo  git clone $git_hub  $coin
 elif [[ ! -d ~$CoinBuilds/$coin ]]; then
-    output "Coinbuilds/$coin_name already exists.... Skipping" 1>&2
+    output "Coinbuilds/$coin already exists.... Skipping" 1>&2
 output "Can not continue"
 exit 0
 fi
@@ -47,7 +47,7 @@ sudo mkdir -p $BDB_PREFIX
 sudo ./autogen.sh
 sudo ./configure LDFLAGS="-L${BDB_PREFIX}/lib/" CPPFLAGS="-I${BDB_PREFIX}/include/"
 sudo make
-output "$coin_name finished and can be found in $coin_name/src/Coind. Make sure you cstrip Coind and copy to /usr/bin"
+output "$coin_name finished and can be found in $coin/src/Coind. Make sure you csudo strip Coind and copy to /usr/bin"
 output "Like my scripts? Please Donate to BTC Donation: 1AxK9a7dgeHvf3VFuwZ2adGiQTX6S1nhrp"
 else
 cd src
@@ -57,7 +57,7 @@ sudo make clean
 sudo make libleveldb.a libmemenv.a
 cd ..
 sudo make -f makefile.unix
-output "$coin_name finished and can be found in $coin_name/src/Coind. Make sure you cstrip Coind and copy to /usr/bin"
+output "$coin finished and can be found in $coin/src/Coind. Make sure you csudo strip Coind and copy to /usr/bin"
 
 output "Like my scripts? Please Donate to BTC Donation: 1AxK9a7dgeHvf3VFuwZ2adGiQTX6S1nhrp"
 fi
