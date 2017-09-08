@@ -6,7 +6,7 @@
 #
 # Program:
 #   After entering coin name and github link automatically build coin
-# BTC Donation: 1AxK9a7dgeHvf3VFuwZ2adGiQTX6S1nhrp
+# BTC Donation: 1KuE2LMZMPXJ4gsVniWLuyyPsqqZs5Av4y
 #
 ################################################################################
 output() {
@@ -64,5 +64,5 @@ cd ..
 sudo make -f makefile.unix
 output "$coin finished and can be found in $coin/src/Coind. Make sure you csudo strip Coind and copy to /usr/bin"
 
-output "Like my scripts? Please Donate to BTC Donation: 1AxK9a7dgeHvf3VFuwZ2adGiQTX6S1nhrp"
+output "Like my scripts? Please Donate to BTC Donation: 1KuE2LMZMPXJ4gsVniWLuyyPsqqZs5Av4y"
 fi
