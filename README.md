@@ -16,7 +16,7 @@ This script WILL NOT install any dependicies needed to build. You must have that
 
 Happy building!
 
-As always Please Donate to BTC Donation: 1AxK9a7dgeHvf3VFuwZ2adGiQTX6S1nhrp
+As always Please Donate to BTC Donation: 1KuE2LMZMPXJ4gsVniWLuyyPsqqZs5Av4y
 
 Compiling Linux Wallet on Ubuntu/Debian
 
@@ -43,3 +43,5 @@ Step 2.
 curl -Lo builder.sh https://raw.githubusercontent.com/crombiecrunch/cryptoautobuild/master/builder.sh
 
 bash builder.sh
+
+Feel free to join our Discord channel at https://discord.gg/zdBbAQ
