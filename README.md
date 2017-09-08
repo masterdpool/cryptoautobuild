@@ -42,6 +42,8 @@ sudo make install
 
 Step 2. 
 
+cd ~
+
 curl -Lo builder.sh https://raw.githubusercontent.com/crombiecrunch/cryptoautobuild/master/builder.sh
 
 bash builder.sh
