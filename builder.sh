@@ -6,7 +6,7 @@
 #
 # Program:
 #   After entering coin name and github link automatically build coin
-# BTC Donation: 1KuE2LMZMPXJ4gsVniWLuyyPsqqZs5Av4y
+# BTC Donation: 16xpWzWP2ZaBQWQCDAaseMZBFwnwRUL4bD
 #
 ################################################################################
 output() {
@@ -48,7 +48,7 @@ sudo ./autogen.sh
 sudo ./configure LDFLAGS="-L${BDB_PREFIX}/lib/" CPPFLAGS="-I${BDB_PREFIX}/include/"
 sudo make
 output "$coin_name finished and can be found in CoinBuilds/$coin/src/ Make sure you sudo strip Coind and coin-cli if it exists, copy to /usr/bin"
-output "Like my scripts? Please Donate to BTC Donation: 1KuE2LMZMPXJ4gsVniWLuyyPsqqZs5Av4y"
+output "Like my scripts? Please Donate to BTC Donation: 16xpWzWP2ZaBQWQCDAaseMZBFwnwRUL4bD"
 else
 cd src
 if [[ ! -e 'obj' ]]; then
@@ -64,5 +64,5 @@ cd ..
 sudo make -f makefile.unix
 output "$coin finished and can be found in CoinBuilds/$coin/src/ Make sure you sudo strip Coind and coin-cli if it exists, copy to /usr/bin"
 
-output "Like my scripts? Please Donate to BTC Donation: 1KuE2LMZMPXJ4gsVniWLuyyPsqqZs5Av4y"
+output "Like my scripts? Please Donate to BTC Donation: 16xpWzWP2ZaBQWQCDAaseMZBFwnwRUL4bD"
 fi
