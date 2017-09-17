@@ -16,7 +16,7 @@ This script WILL NOT install any dependicies needed to build. You must have that
 
 Happy building!
 
-As always Please Donate to BTC Donation: 1KuE2LMZMPXJ4gsVniWLuyyPsqqZs5Av4y
+As always Please Donate to BTC Donation: 16xpWzWP2ZaBQWQCDAaseMZBFwnwRUL4bD
 
 Compiling Linux Wallet on Ubuntu/Debian
 
