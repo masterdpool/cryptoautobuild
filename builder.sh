@@ -57,13 +57,13 @@ elif [[ ! -d 'obj' ]]; then
     output "Hey the developer did his job" 1>&2
 fi
 if [[ ! -e 'leveldb' ]]; then
+output "No leveldb. Making coin"
+elif [[ ! -d 'leveldb' ]]; then
 cd leveldb
 sudo chmod +x build_detect_platform
 sudo make clean
 sudo make libleveldb.a libmemenv.a
 cd ..
-sudo make -f makefile.unix
-elif [[ ! -d 'leveldb' ]]; then
 sudo make -f makefile.unix
 fi
 output "$coin finished and can be found in CoinBuilds/$coin/src/ Make sure you sudo strip Coind and coin-cli if it exists, copy to /usr/bin"
