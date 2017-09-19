@@ -21,10 +21,10 @@ displayErr() {
     exit 1;
 }
 cd ~
-if [[ ! -e 'CoinBuilds' ]]; then
+if [[ ! -d 'CoinBuilds' ]]; then
+output "Coinbuilds already exists.... Skipping" 1>&2
+else
  sudo mkdir CoinBuilds
-elif [[ ! -d 'CoinBuilds' ]]; then
-    output "Coinbuilds already exists.... Skipping" 1>&2
 fi
 clear
 cd CoinBuilds
@@ -32,12 +32,12 @@ output "This script assumes you already have the dependicies installed on your s
 output ""
     read -e -p "Enter the name of the coin : " coin
     read -e -p "Paste the github link for the coin : " git_hub
-if [[ ! -e '$coin' ]]; then
-sudo  git clone $git_hub  $coin
-elif [[ ! -d ~$CoinBuilds/$coin ]]; then
-    output "Coinbuilds/$coin already exists.... Skipping" 1>&2
+if [[ ! -f '$coin' ]]; then
+output "Coinbuilds/$coin already exists.... Skipping" 1>&2
 output "Can not continue"
 exit 0
+else
+sudo  git clone $git_hub  $coin
 fi
 cd "${coin}"
 if [ -f autogen.sh ]; then
@@ -51,19 +51,20 @@ output "$coin_name finished and can be found in CoinBuilds/$coin/src/ Make sure 
 output "Like my scripts? Please Donate to BTC Donation: 16xpWzWP2ZaBQWQCDAaseMZBFwnwRUL4bD"
 else
 cd src
-if [[ ! -e 'obj' ]]; then
+if [[ ! -d 'obj' ]]; then
+output "Hey the developer did his job" 1>&2
+else
  sudo mkdir obj
-elif [[ ! -d 'obj' ]]; then
-    output "Hey the developer did his job" 1>&2
 fi
-if [[ ! -e 'leveldb' ]]; then
-output "No leveldb. Making coin"
-elif [[ ! -d 'leveldb' ]]; then
+if [[ ! -d 'leveldb' ]]; then
 cd leveldb
 sudo chmod +x build_detect_platform
 sudo make clean
 sudo make libleveldb.a libmemenv.a
 cd ..
+sudo make -f makefile.unix
+else
+output "No leveldb. Making coin"
 sudo make -f makefile.unix
 fi
 output "$coin finished and can be found in CoinBuilds/$coin/src/ Make sure you sudo strip Coind and coin-cli if it exists, copy to /usr/bin"
