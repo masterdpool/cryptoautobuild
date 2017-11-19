@@ -16,21 +16,21 @@ displayErr() {
     exit 1;
 }
 cd ~
-if [[ ! -e 'CoinBuilds' ]]; then
- sudo mkdir CoinBuilds
-elif [[ ! -d 'CoinBuilds' ]]; then
-    output "Coinbuilds already exists.... Skipping" 1>&2
+if [[ ! -e 'Coins' ]]; then
+ sudo mkdir Coins
+elif [[ ! -d 'Coins' ]]; then
+    output "Coins already exists.... Skipping" 1>&2
 fi
 clear
-cd CoinBuilds
+cd Coins
 output "This script assumes you already have the dependicies installed on your system!"
 output ""
     read -e -p "Enter the name of the coin : " coin
     read -e -p "Paste the github link for the coin : " git_hub
 if [[ ! -e '$coin' ]]; then
 sudo  git clone $git_hub  $coin
-elif [[ ! -d ~$CoinBuilds/$coin ]]; then
-    output "Coinbuilds/$coin already exists.... Skipping" 1>&2
+elif [[ ! -d ~$Coins/$coin ]]; then
+    output "Coins/$coin already exists.... Skipping" 1>&2
 output "Can not continue"
 exit 0
 fi
@@ -42,7 +42,7 @@ sudo mkdir -p $BDB_PREFIX
 sudo ./autogen.sh
 sudo ./configure LDFLAGS="-L${BDB_PREFIX}/lib/" CPPFLAGS="-I${BDB_PREFIX}/include/"
 sudo make
-output "$coin_name finished and can be found in CoinBuilds/$coin/src/ Make sure you sudo strip Coind and coin-cli if it exists, copy to /usr/bin"
+output "$coin_name finished and can be found in Coins/$coin/src/ Make sure you sudo strip Coind and coin-cli if it exists, copy to /usr/bin"
 else
 cd src
 if [[ ! -e 'obj' ]]; then
@@ -56,5 +56,5 @@ sudo make clean
 sudo make libleveldb.a libmemenv.a
 cd ..
 sudo make -f makefile.unix
-output "$coin finished and can be found in CoinBuilds/$coin/src/ Make sure you sudo strip Coind and coin-cli if it exists, copy to /usr/bin"
+output "$coin finished and can be found in Coins/$coin/src/ Make sure you sudo strip Coind and coin-cli if it exists, copy to /usr/bin"
 fi
