@@ -1,12 +1,7 @@
 #!/bin/bash
 ################################################################################
-# Author: crombiecrunch
-#
-# Web: www.thecryptopool.com
-#
 # Program:
 #   After entering coin name and github link automatically build coin
-# BTC Donation: 16xpWzWP2ZaBQWQCDAaseMZBFwnwRUL4bD
 #
 ################################################################################
 output() {
